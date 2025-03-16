@@ -28,7 +28,7 @@ function displayBestOptimizedResult() {
         resultHTML += `
             <li class="clickable-weapon" data-index="${index}">
                 <strong>Rank ${index + 1}:</strong> ${weapon.weaponStats.name} <br>
-                <strong>Raw Damage:</strong> ${rawDamage.toFixed(2)} <br>
+                <strong>&lt;Raw Dmg&gt;:</strong> ${rawDamage.toFixed(2)} <br>
                 <strong>Sharpness:</strong> ${weapon.getSharpness()} <br>
                 <strong>Decorations:</strong> ${sortedDecorations
             .map(deco => deco.name ? `${deco.name} (Lv${deco.level})` : "Empty Slot")
@@ -101,7 +101,7 @@ function updateSavedWeaponsDisplay() {
             <strong>Decorations:</strong> ${sortedDecorations
             .map(deco => deco.name ? `${deco.name} (Lv${deco.level})` : "Empty Slot")
             .join(", ")}<br>
-            <strong>TOTAL RAW:</strong>${rawDamage}<br>
+            <strong>&lt;Raw Dmg&gt;</Raw>:</strong>${rawDamage}<br>
             <button onclick="removeSavedWeapon(${index})">❌ Remove</button>
         `;
 
