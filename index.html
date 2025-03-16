@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MH Wilds Attack Calculator</title>
+</head>
+<body>
+<h2>MH Wilds Attack Calculator</h2>
+
+<label for="weaponName">Weapon Name:</label>
+<input type="text" id="weaponName"><br>
+
+<label for="baseAttack">Base Attack:</label>
+<input type="number" id="baseAttack"><br>
+
+<label for="baseAffinity">Base Affinity:</label>
+<input type="number" id="baseAffinity"><br>
+
+<label for="sharpnessModifier">Handicraft Level:</label>
+<select id="sharpnessModifier">
+    <option value="Red">Red</option>
+    <option value="Orange">Orange</option>
+    <option value="Yellow">Yellow</option>
+    <option value="Green">Green</option>
+    <option value="Blue">Blue</option>
+    <option value="White">White</option>
+</select>
+<br>
+
+
+<h4>Decoration Slots:</h4>
+<ul>
+    <li>
+        <label for="slot1">Slot 1 Level</label>
+        <input type="number" id="slot1"><br>
+    </li>
+    <li>
+        <label for="slot2">Slot 2 Level</label>
+        <input type="number" id="slot2"><br>
+    </li>
+    <li>
+        <label for="slot3">Slot 3 Level</label>
+        <input type="number" id="slot3"><br>
+    </li>
+</ul>
+
+<h4>Innate Weapon Skills (Skills ON BASE Weapon):</h4>
+<ul>
+    <li>
+        <label for="attackSkill">Attack Skill Level</label>
+        <input type="number" id="attackSkill"><br>
+    </li>
+    <li>
+        <label for="critEye">Expert Level</label>
+        <input type="number" id="critEye"><br>
+    </li>
+    <li>
+        <label for="critBoost">Critical Boost Level</label>
+        <input type="number" id="critBoost"><br>
+    </li>
+</ul>
+
+<label>Armor Skills:</label>
+<ul>
+    <li>
+        <label for="weaknessExploit">Weakness Exploit Level</label>
+        <input type="number" id="weaknessExploit"><br>
+    </li>
+    <li>
+        <label for="partBreaker">Partbreaker Level</label>
+        <input type="number" id="partBreaker"><br>
+    </li>
+</ul>
+
+
+<button id="optimizeBtn">Optimize</button>
+
+
+<div id="resultsContainer">
+    <h2>Best Optimized Setup</h2>
+    <h3 id="result"></h3>
+</div>
+
+
+<h2>Saved Weapons</h2>
+<ul id="weaponList"></ul>
+
+
+<script type="module" src="uiHandler.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>
