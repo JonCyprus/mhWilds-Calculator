@@ -61,7 +61,7 @@ function saveWeaponToList(weapon) {
     weaponList.appendChild(listItem);
 }
 
-//ttach event listener to button
+//Attach event listener to button
 document.getElementById("optimizeBtn").addEventListener("click", displayBestOptimizedResult);
 
 let savedWeapons = []; //Stores saved weapons
@@ -69,7 +69,7 @@ let savedWeapons = []; //Stores saved weapons
 function saveWeapon(weapon) {
     console.log("✅ Saving weapon:", weapon);
 
-    if (savedWeapons.length >= 5) {
+    if (savedWeapons.length >= 10) {
         alert("You can only save up to 5 weapons!");
         return;
     }
