@@ -1,7 +1,7 @@
 ////// Utility functions for input values
 
 // Gets the innate weapon values
-export function getInnateWeaponStats() {
+export function getInnateWeaponStatsHTML() {
     return {
         name: document.getElementById("weaponName").value,
         baseAttack: parseFloat(document.getElementById("baseAttack").value),
@@ -14,7 +14,7 @@ export function getInnateWeaponStats() {
 }
 
 // Gets the innate weapon skills
-export function getInnateWeaponSkills() {
+export function getInnateWeaponSkillsHTML() {
     return {
         attackSkill: parseInt(document.getElementById("attackSkill").value) || 0,
         critEye: parseInt(document.getElementById("critEye").value) || 0,

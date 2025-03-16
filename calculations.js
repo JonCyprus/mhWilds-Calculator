@@ -140,7 +140,7 @@ const skillMultipliers = {
     "Expert": { 0: 0, 1: 0.04, 2: 0.08, 3: 0.12, 4: 0.16, 5: 0.20},
     "Critical Boost": { 0: 0, 1: 0.03, 2: 0.06, 3: 0.09, 4: 0.12, 5: 0.15 },
     "Weakness Exploit": { 0: 0, 1: 0.05, 2: 0.10, 3: 0.15, 4: 0.20, 5: 0.30 },
-    "Sharpness": { "Red": 0.5, "Yellow": 1.00, "Green": 1.05, "Blue": 1.20, "White": 1.33}
+    "Sharpness": { "Red": 0.5, "Yellow": 1.00, "Green": 1.05, "Blue": 1.20, "White": 1.33, "Bowgun": 1.00}
 };
 
 

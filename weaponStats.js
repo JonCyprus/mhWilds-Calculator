@@ -1,4 +1,4 @@
-import {getInnateWeaponStats, getInnateWeaponSkills, getDecorations} from "./htmlGetters.js";
+import {getInnateWeaponStatsHTML, getInnateWeaponSkillsHTML, getDecorations} from "./htmlGetters.js";
 
 ///// Classes & Instantiation regarding a weapon /////
 
@@ -19,8 +19,8 @@ class WeaponStats {
 }
 
 // Instantiation for WeaponStats
-function createWeaponStatsInstance() {
-    const rawData = getInnateWeaponStats();
+function createWeaponStatsInstanceHTML() {
+    const rawData = getInnateWeaponStatsHTML();
     return new WeaponStats(
         rawData.name,
         rawData.baseAttack,
@@ -49,7 +49,7 @@ class InnateWeaponSkills {
 }
 
 function createWeaponSkillsInstance() {
-    const rawData = getInnateWeaponSkills();
+    const rawData = getInnateWeaponSkillsHTML();
     return new InnateWeaponSkills(
         rawData.attackSkill,
         rawData.critEye,
@@ -149,7 +149,7 @@ export class Weapon {
 
 //// Create a Weapon from Inputs
 export function createWeaponFromInputs(optimize = false) {
-    const weaponStats = createWeaponStatsInstance()
+    const weaponStats = createWeaponStatsInstanceHTML()
     const innateWeaponSkills = createWeaponSkillsInstance()
     let decoSkills = new DecoWeaponSkills();
     // I'll fix later to get decorations and bundle it into a class
