@@ -1,15 +1,14 @@
 // Calculations regarding handicraft increasing sharpness level are currently not considered. Instead change the sharpness
 // and then just remove the appropriate jewel slot
 
-import { createWeaponFromInputs, Weapon, Decoration, createEmptyDecoration, DecoWeaponSkills } from "./weaponStats.js";
+import { createWeaponFromInputs, Decoration, createEmptyDecoration, DecoWeaponSkills } from "./weaponStats.js";
 import { createArmorSkillsInstance } from "./armorStats.js";
 
-// Will return top 3 optimizations from highest to lowest
+// Will return top optimizations from highest to lowest
 export function optimizeRawWeapon() {
     // Instantiate weapon with no slots
     const weapon = createWeaponFromInputs(true);
     const armor = createArmorSkillsInstance();
-    let bestSetup = null;
     let results = [];
 
     // Get optimal combinations
