@@ -1,4 +1,4 @@
-////// Utility functions for input values
+// HTML Getters for the application
 
 // Gets the innate weapon values
 export function getInnateWeaponStatsHTML() {
@@ -25,6 +25,14 @@ export function getInnateWeaponSkillsHTML() {
 // Gets the decoration skills for your weapon
 // Will make this into a dropdown where you choose decorations
 export function getDecorations() {
+    return {
+        dec1Type: document.getElementById("dec1Type").value || "",
+        dec1Level: parseInt(document.getElementById("dec1Level").value) || 0,
+        dec2Type: document.getElementById("dec2Type").value || "",
+        dec2Level: parseInt(document.getElementById("dec2Level").value) || 0,
+        dec3Type: document.getElementById("dec3Type").value || "",
+        dec3Level: parseInt(document.getElementById("dec3Level").value) || 0,
+    }
 }
 
 // Gets the relevant armor skills for damage

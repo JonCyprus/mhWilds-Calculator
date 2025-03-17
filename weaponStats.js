@@ -66,10 +66,6 @@ export class Decoration {
         this.level = level;
     }
 }
-//fix dis later
-function createDecoration() {
-
-}
 
 // Make an empty decoration
 export function createEmptyDecoration() {
@@ -92,9 +88,13 @@ export class DecoWeaponSkills {
     }
 }
 
-//fix dis later too after optimization
-function createDecoWeaponSkillsInstance() {
+// Instantiate from HTML data
+function createDecoWeaponSkillsInstanceHTML() {
     const rawData = getDecorations();
+    let dec1 = new Decoration(rawData.dec1Type, rawData.dec1Level);
+    let dec2 = new Decoration(rawData.dec2Type, rawData.dec2Level);
+    let dec3 = new Decoration(rawData.dec3Type, rawData.dec3Level);
+    return new DecoWeaponSkills(dec1, dec2, dec3);
 }
 
 // Weapon Class
@@ -160,10 +160,7 @@ export function createWeaponFromInputs(optimize = false) {
         decoSkills.dec3 = emptyDeco;
     } else {
         // Assign the decorations, this absolutely is not right but I'm only working on optimization rn
-        let rawDecoData = getDecorations();
-        decoSkills.dec1 = rawDecoData.dec1 || createEmptyDecoration();
-        decoSkills.dec2 = rawDecoData.dec2 || createEmptyDecoration();
-        decoSkills.dec3 = rawDecoData.dec3 || createEmptyDecoration();
+        decoSkills = createDecoWeaponSkillsInstanceHTML();
     }
 
     return new Weapon(weaponStats, innateWeaponSkills, decoSkills);

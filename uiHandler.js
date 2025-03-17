@@ -1,5 +1,10 @@
 import { optimizeRawWeapon, calculateRawDamage } from "./calculations.js";
 import { createArmorSkillsInstance } from "./armorStats.js";
+import {createWeaponFromInputs} from "./weaponStats.js";
+
+//Attach event listener to button
+document.getElementById("optimizeBtn").addEventListener("click", displayBestOptimizedResult);
+document.getElementById("calculateDamageBtn").addEventListener("click", displayWeaponDamage);
 
 // Function to display the best (top 1) weapon optimization
 function displayBestOptimizedResult() {
@@ -41,7 +46,7 @@ function displayBestOptimizedResult() {
 
     resultsContainer.innerHTML = resultHTML;
 
-    // ✅ Add event listeners to save weapon when clicked
+    //  Add event listeners to save weapon when clicked
     document.querySelectorAll(".clickable-weapon").forEach((item, index) => {
         item.addEventListener("click", () => saveWeapon(topResults[index][0])); // Pass weapon object
     });
@@ -61,8 +66,7 @@ function saveWeaponToList(weapon) {
     weaponList.appendChild(listItem);
 }
 
-//Attach event listener to button
-document.getElementById("optimizeBtn").addEventListener("click", displayBestOptimizedResult);
+
 
 let savedWeapons = []; //Stores saved weapons
 
@@ -76,6 +80,31 @@ function saveWeapon(weapon) {
 
     savedWeapons.push(weapon);
     updateSavedWeaponsDisplay();
+}
+function displayWeaponDamage() {
+    //  Create a weapon with manually entered values
+    const weapon = createWeaponFromInputs(false);
+    const armor = createArmorSkillsInstance();
+
+    //  Calculate damage
+    const rawDamage = calculateRawDamage(weapon, armor);
+
+    // Display in the same results container
+    document.getElementById("result").innerHTML = `
+        <div id="clickableResult" class="clickable-weapon">
+        <strong>Weapon:</strong> ${weapon.weaponStats.name} <br>
+        <strong>Average Raw Damage:</strong> ${rawDamage.toFixed(2)} <br>
+        <strong>Sharpness:</strong> ${weapon.getSharpness()} <br>
+        <strong>Decorations:</strong> ${weapon.decoWeaponSkills.getDecoArray().map(deco => deco.name ? `${deco.name} 
+        (Lv${deco.level})` : "Empty Slot").join(", ")}
+        </div>
+        <br>
+    `;
+
+    // Attach event listener to make it clickable
+    document.getElementById("clickableResult").addEventListener("click", function () {
+        saveWeapon(weapon);  // Calls the existing save function when clicked
+    });
 }
 
 function updateSavedWeaponsDisplay() {

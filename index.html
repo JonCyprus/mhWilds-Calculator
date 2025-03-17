@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MH Wilds Attack Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h2>MH Wilds Attack Calculator</h2>
@@ -21,6 +22,7 @@
 
 <label for="sharpnessModifier">Sharpness Level:</label>
 <select id="sharpnessModifier">
+    <option value="" disabled selected></option>
     <option value="Red">Red</option>
     <option value="Orange">Orange</option>
     <option value="Yellow">Yellow</option>
@@ -34,19 +36,55 @@
 
 <h4>Decoration Slots:</h4>
 <ul>
-    <li>
+    <li class="decoration-row">
         <label for="slot1">Slot 1 Level</label>
-        <input type="number" id="slot1"><br>
+        <input type="number" id="slot1">
+
+        <label for="dec1Type">Type</label>
+        <select id="dec1Type">
+            <option value="" disabled selected></option>
+            <option value="Attack">Attack</option>
+            <option value="Expert">Expert</option>
+            <option value="Critical Boost">Critical Boost</option>
+        </select>
+
+        <label for="dec1Level">Deco Level</label>
+        <input type="number" id="dec1Level" min="1" max="3">
     </li>
-    <li>
+
+    <li class="decoration-row">
         <label for="slot2">Slot 2 Level</label>
-        <input type="number" id="slot2"><br>
+        <input type="number" id="slot2">
+
+        <label for="dec2Type">Type</label>
+        <select id="dec2Type">
+            <option value="" disabled selected></option>
+            <option value="Attack">Attack</option>
+            <option value="Expert">Expert</option>
+            <option value="Critical Boost">Critical Boost</option>
+        </select>
+
+        <label for="dec2Level">Deco Level</label>
+        <input type="number" id="dec2Level" min="1" max="3">
     </li>
-    <li>
+
+    <li class="decoration-row">
         <label for="slot3">Slot 3 Level</label>
-        <input type="number" id="slot3"><br>
+        <input type="number" id="slot3">
+
+        <label for="dec3Type">Type</label>
+        <select id="dec3Type">
+            <option value="" disabled selected></option>
+            <option value="Attack">Attack</option>
+            <option value="Expert">Expert</option>
+            <option value="Critical Boost">Critical Boost</option>
+        </select>
+
+        <label for="dec3Level">Deco Level</label>
+        <input type="number" id="dec3Level" min="1" max="3">
     </li>
 </ul>
+
 
 <h4>Innate Weapon Skills (Skills ON BASE Weapon):</h4>
 <ul>
@@ -76,12 +114,17 @@
     </li>
 </ul>
 
+<div class="button-container">
+    <button id="optimizeBtn">Optimize Jewels</button>
+    <button id="calculateDamageBtn">Calculate Raw Damage</button>
+</div>
 
-<button id="optimizeBtn">Optimize Jewels</button>
+
+
 
 
 <div id="resultsContainer">
-    <h2>Best Optimized Setup</h2>
+    <h2>Calculated Setup(s) [Click to Save]:</h2>
     <h3 id="result"></h3>
 </div>
 
